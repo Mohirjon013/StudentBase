@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <style type="text/tailwindcss">
+        @theme {
+            --color-clifford: #da373d;
+        }
+    </style>
+</head>
+<body class="bg-[#F8D442]">
+    
+    <div class="w-[475px] h-[590px] pt-[44px] pb-[52px] px-[30px] bg-white fixed inset-0 m-auto  rounded-[16px]">
+        <h1 class="pl-3 font-bold text-[32px] border-l-[6px] border-[#F8D442] ml-[36px]">Admin Students</h1>
+        <h2 class="mt-[43px] font-semibold text-[22px] text-center leading-[100%]">SIGN UP</h2>
+        <p class="mt-[9px] mb-[50px] text-[14px] text-center text-[#6C6C6C]">Enter your credentials to access your account</p>
+
+        <form class="register-form w-[415px]">
+            <label class="">
+                <span class=" font-medium text-[17px] text-[#6C6C6C]">Login</span>
+                <input class="w-full mt-[11px] p-[14px] text-[18px] txet-black border border-[#E5E5E5] placeholder:text-[15px] placeholder:text-[Enter] outline-none rounded-lg" type="text" name="login" placeholder="Enter your login" required autocomplete="off">
+            </label>
+
+            <label class="">
+                <span class="mt-[17px] block font-medium text-[17px] text-[#6C6C6C]">Password</span>
+                <input class="w-full mt-[11px] p-[14px] text-[18px] txet-black border border-[#E5E5E5] placeholder:text-[15px] placeholder:text-[Enter] outline-none rounded-lg" type="password" name="password" placeholder="Enter your password" required autocomplete="off">
+            </label>
+            <button class="w-full mt-[35px] mb-[11px] py-[13px] text-[17px] font-medium text-white bg-[#FEAF00] rounded-lg cursor-pointer" type="submit"><span class="">Register</span></button>
+            <a class=" text-[17px] font-medium text-center block " href="./">Back</a>
+        </form>
+    </div>
+
+    <script src="./js/register.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</body>
+</html>

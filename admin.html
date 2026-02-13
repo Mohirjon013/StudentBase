@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <style type="text/tailwindcss">
+        @theme {
+            --color-clifford: #da373d;
+        }
+    </style>
+</head>
+<body >
+    <div class="flex bg-[#F2EAE1]">
+        <div class="w-[25%] h-[100vh] pt-[18px] pl-[25px]">
+            <h1 class="font-bold text-[20px] pl-[12px] border-l-[3px] border-l-[#F8D442]">Admin Students</h1>
+            
+            <div class="w-[193px] mx-auto">
+                <div class=" mt-[54px]">
+                    <img class="mx-auto rounded-full" src="./images/person.png" alt="person" width="130" height="130">
+                </div>
+                <h2 class="font-bold text-[17px] mt-3 text-center">Karthi Madesh</h2>
+                <strong class="text-[14px] font-medium text-[#FEAF00] text-center block">Admin</strong>
+                <button class="w-[193px] flex items-center justify-center gap-[15px] bg-[#FEAF00] mt-[63px] rounded-lg font-medium text-[14px] py-[14px]">
+                    <img src="./images/cap-icon.svg" alt="cap-icon" width="20" height="16">
+                    Teachers
+                </button>
+            </div>
+        </div>
+        
+        <div class="w-[75%] h-[100vh] bg-[#F8F8F8]">
+            <div class="py-[11px] pl-[30px] pr-[51px] bg-[#F2EAE1] flex items-center justify-between">
+                <img src="./images/back-icon.svg" alt="back-icon" width="17.5" height="17.5">
+                <div class="flex items-center gap-[27px]">
+                    <label class="w-[250px] relative">
+                        <input class="w-full bg-white pt-[9px] pb-[11px] pl-[13px] pr-8 rounded-[16px] outline-none" type="text" placeholder="Search..." name="search" autocomplete="off">
+                        <img class="absolute top-[15px] right-3" src="./images/search-icon.svg" alt="search-icon" width="14" height="14">
+                    </label>
+                    <img src="./images/notice-icon.svg" alt="notice-icon" width="17" height="20">
+                </div>
+            </div>
+            <div class="px-[30px] bg-red-">
+                <div class="flex items-center justify-between py-[12px]">
+                    <h2 class="font-bold text-[25px]">Teachers List</h2>
+                    <div class="flex items-center gap-[30px]">
+                        <button>
+                            <img src="./images/sort-icon.svg" alt="sort-icon" width="14" height="22">
+                        </button>
+                        <button onclick="handleAddStudent()" class="w-[200px] py-[13px] bg-[#FEAF00] text-center text-white rounded-lg font-semibold text-[15px] cursor-pointer">ADD NEW STUDENT</button>
+                    </div>
+                </div>
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-t-[1px] border-t-[#E5E5E5]">
+                            <th class="py-[21px] w-[145px]   text-[13px] text-[#ACACAC] font-bold">Name</th>
+                            <th class="py-[21px]  text-[13px] text-[#ACACAC] font-bold">Email</th>
+                            <th class="py-[21px]  text-[13px] text-[#ACACAC] font-bold">Phone </th>
+                            <th class="py-[21px]  text-[13px] text-[#ACACAC] font-bold">Enroll Number</th>
+                            <th class="py-[21px]  text-[13px] text-[#ACACAC] font-bold">Date  admission</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class=" overflow-hidden">
+                            <td class="flex items-center justify-between p-[15px] rounded-l-[16px] bg-white">
+                                <img src="./images/ppl-img.png" alt="ppl-img" width="65" height="55">
+                                <p class="text-[14px]">Karthi</p>
+                            </td>
+                            <td class="text-center bg-white">
+                                <p class="text-[14px]">karthi@gmmail.com</p>
+                            </td>
+                            <td class="text-center bg-white">
+                                <p class="text-[14px]">7305477760</p>
+                            </td>
+                            <td class="text-center bg-white">
+                                <p class="text-[14px]">1234567305477760</p>
+                            </td>
+                            <td class="text-center bg-white">
+                                <p class="text-[14px]">08-Dec, 2021</p>
+                            </td>
+                            <td class="text-right align-middle p-2 pr-[20px] bg-white rounded-r-[16px]">
+                                <button class="inline-flex hover:scale-125 duration-300 mr-[14px] cursor-pointer" type="button">
+                                    <img src="./images/more-icon.svg" alt="More options" width="19.5" height="4.5">
+                                </button>
+                                <button class="inline-flex hover:scale-125 duration-300 mr-[14px] cursor-pointer" type="button">
+                                    <img src="./images/edit-icon.svg" alt="Edit" width="19" height="19">
+                                </button>
+                                <button class="inline-flex hover:scale-125 duration-300 cursor-pointer" type="button">
+                                    <img src="./images/delete-icon.svg" alt="Delete" width="16" height="18">
+                                </button>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="wrapper" class="modal-wrapper fixed inset-0 scale-0 rounded-lg backdrop-blur-[10px] duration-400">
+        <div class=" w-[700px] mx-auto mt-8 bg-white p-5 rounded-lg">
+            <form class="py-4" autocomplete="off">
+                <label>
+                    <input type="file" class="hidden">
+                    <img class="mx-auto rounded-lg cursor-pointer" src="./images/empty-img.png" alt="empty-img" width="200">
+                </label>
+                <div class="mt-8">
+                    <div class="flex items-center justify-between">
+                        <label class="w-[48%]">
+                            <span class="text-[18px] font-medium inline-block mb-3">Name:</span>
+                            <input class="w-full bg-amber-400 !text-black placeholder:!text-white p-3 rounded-lg  outline-none focus:shadow  focus:shadow-amber-700" type="text" placeholder="Enter name" name="username" autocomplete="off" required>
+                        </label>
+                        <label class="w-[48%]">
+                            <span class="text-[18px] font-medium inline-block mb-3">Email:</span>
+                            <input class="w-full bg-amber-400 !text-black placeholder:!text-white p-3 rounded-lg  outline-none focus:shadow  focus:shadow-amber-700" type="email" placeholder="Enter email" name="email" autocomplete="off" required>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between mt-5">
+                        <label class="w-[48%]">
+                            <span class="text-[18px] font-medium inline-block mb-3">Phone:</span>
+                            <input class="w-full bg-amber-400 !text-black placeholder:!text-white p-3 rounded-lg  outline-none focus:shadow  focus:shadow-amber-700" type="tel" placeholder="Enter phone number" name="phoneNumber" autocomplete="off" required>
+                        </label>
+                        <label class="w-[48%]">
+                            <span class="text-[18px] font-medium inline-block mb-3">Date:</span>
+                            <input class="w-full bg-amber-400 !text-black placeholder:!text-white p-3 rounded-lg  outline-none focus:shadow  focus:shadow-amber-700" type="date" placeholder="Enter date" name="date" autocomplete="off" required>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between mt-5">
+                        <label class="w-[48%]">
+                            <span class="text-[18px] font-medium inline-block mb-3">Phone:</span>
+                            <input class="w-full bg-amber-400 !text-black placeholder:!text-white p-3 rounded-lg  outline-none focus:shadow  focus:shadow-amber-700" type="tel" placeholder="Enter phone number" name="phoneNumber" autocomplete="off" required>
+                        </label>
+                    </div>
+                    <button class="w-full mt-8 py-2 block bg-amber-400 text-white rounded-xl cursor-pointer  text-[20px]" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="./js/admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</body>
+</html>
