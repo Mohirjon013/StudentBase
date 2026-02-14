@@ -45,7 +45,7 @@ function handleAddStudent(){
                 </div>
                 <div class="flex items-center justify-between mt-5">
                     <label class="w-[48%]">
-                        <span class="text-[18px] font-medium inline-block mb-3">Phone:</span>
+                        <span class="text-[18px] font-medium inline-block mb-3">Enroll Number:</span>
                         <input class="w-full bg-amber-400 !text-black placeholder:!text-white p-3 rounded-lg  outline-none focus:shadow focus:shadow-amber-700" type="tel" placeholder="Enter phone number" name="enrolNumber" autocomplete="off" required>
                     </label>
                 </div>
@@ -104,7 +104,7 @@ function renderData(arr){
         
         elTr.innerHTML = `
             <td class="flex items-center gap-3 p-[15px] rounded-l-[16px] bg-white">
-                <img onerror="this.src='./images/ppl-img.png'" class="person-img rounded-lg" src="${item.img ? item.img : "./images/ppl-img.png"}" alt="ppl-img" width="65" height="55">
+                <img onerror="this.src='./images/person.png'" class="person-img rounded-lg" src="${item.img ? item.img : "./images/ppl-img.png"}" alt="ppl-img" width="65" height="55">
                 <p class="text-[14px]">${item.name[0].toUpperCase() + item.name.substring(1)}</p>
             </td>
             <td class="text-center bg-white">
@@ -161,7 +161,7 @@ function handleUpdateBtn(id){
         <form class="update-form py-4" autocomplete="off">
             <label>
                 <input type="file" class="update-input hidden">
-                <img onerror="handleErrorImg()" class="update-img mx-auto rounded-lg cursor-pointer" src="${findedUpdateObj.img ? findedUpdateObj.img : "./images/empty-img.png"}" alt="empty-img" width="200">
+                <img onerror="handleErrorImg()" class="update-img w-[200px] h-[200px] object-contain mx-auto rounded-lg cursor-pointer" src="${findedUpdateObj.img ? findedUpdateObj.img : "./images/empty-img.png"}" alt="empty-img" width="200">
             </label>
     
             <div class="mt-8">
@@ -229,7 +229,7 @@ function handleUpdateBtn(id){
 }
 function handleErrorImg(){
     let elUpdateImg = document.querySelector(".update-img")
-    elUpdateImg.src = "./images/empty-img.png"
+    elUpdateImg.src = "./images/person.png"
 }
 // update func end 
 
@@ -275,10 +275,18 @@ elModalWrapper.addEventListener("click", function(e){
 let elStudentSearch = document.querySelector(".student-search")
 elStudentSearch.addEventListener("keyup", function(e){
     const searchValue = e.target.value.toLowerCase()
-    const totalFiltered = total.filter(item => item.name.toLowerCase().includes(searchValue) || item.number.includes(searchValue))
+    const totalFiltered = total.filter(item => item.name.toLowerCase().includes(searchValue))
     renderData(totalFiltered)
 })
 // search end
+
+// sort start 
+function handleSortArr(){
+    const sortedTotalArr = [...total].sort((a, b) => a.name.localeCompare(b.name))
+    renderData(sortedTotalArr)
+}
+// sort end 
+
 
 // user name start
 const userName = JSON.parse(localStorage.getItem("login-data"))

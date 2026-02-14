@@ -14,7 +14,7 @@ elLoginForm.addEventListener("submit", (e) => {
     
     
     if(registerData){
-        if(data.login == registerData.newUserLogin && data.password == registerData.newUserPassweord){
+        if(data.login == registerData.newUserLogin && data.password == registerData.newUserPassword){
             elLoginBtn.innerHTML = `
             <img class="mx-auto" src="./images/loading.gif" alt="loading" width="54" height="54">
         `

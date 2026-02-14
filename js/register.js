@@ -6,7 +6,7 @@ elRegisterForm.addEventListener("submit", (e) => {
     e.preventDefault()
     const newData = {
         newUserLogin:e.target.login.value,
-        newUserPassweord:e.target.password.value
+        newUserPassword:e.target.password.value
     }
     console.log(newData);
     

@@ -12,7 +12,7 @@ function renderSinglePage(arr){
             </div>
             <div class="w-[590px] mt-[40px] flex justify-between pl-[22px] pr-[15px] pt-[15px] bg-white rounded-xl">
                 <div class="flex items-center gap-[50px] my-[30px]">
-                    <img class="rounded-[15px] object-cover" src="${item.img}" alt="user-pic" width="220" height="220">
+                    <img onerror="this.src='./images/person.png'" class="rounded-[15px] object-cover" src="${item.img}" alt="user-pic" width="220" height="220">
                     <ul class="space-y-[12px]">
                         <li>
                             <span class="block font-semibold text-[12px] text-[#ACACAC]">Name:</span>
@@ -61,6 +61,16 @@ elUserFullName.textContent = userName.login.toUpperCase()
 
 
 // Log Out start 
+
+let elModalWrapper = document.querySelector(".modal-wrapper")
+let elModalInner = document.querySelector(".modal-inner")
+
+elModalWrapper.addEventListener("click", function(e){
+    if(e.target.id == "wrapper"){
+        elModalWrapper.classList.add("scale-0")
+    }
+})
+
 function handleLogOutBtn(){
     elModalWrapper.classList.remove("scale-0")
     elModalInner.classList.add("w-[550px]")

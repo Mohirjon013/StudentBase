@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+    <link rel="icon" href="./images/logo-icon.png">
     <link rel="stylesheet" href="./css/main.css">
     <style type="text/tailwindcss">
         @theme {
@@ -45,14 +46,14 @@
                     <img src="./images/notice-icon.svg" alt="notice-icon" width="17" height="20">
                 </div>
             </div>
-            <div class="px-[30px] bg-red-">
+            <div class="px-[30px]">
                 <div class="flex items-center justify-between py-[12px]">
                     <h2 class="font-bold text-[25px]">Teachers List</h2>
                     <div class="flex items-center gap-[30px]">
-                        <button>
+                        <button class="cursor-pointer hover:scale-125 duration-400" onclick="handleSortArr()">
                             <img src="./images/sort-icon.svg" alt="sort-icon" width="14" height="22">
                         </button>
-                        <button onclick="handleAddStudent()" class="w-[200px] py-[13px] bg-[#FEAF00] text-center text-white rounded-lg font-semibold text-[15px] cursor-pointer">ADD NEW STUDENT</button>
+                        <button onclick="handleAddStudent()" class="w-[200px] py-[13px] bg-[#FEAF00] text-center text-white rounded-lg font-semibold text-[15px] cursor-pointer hover:opacity-60 duration-400">ADD NEW STUDENT</button>
                     </div>
                 </div>
                 <table class="w-full">
