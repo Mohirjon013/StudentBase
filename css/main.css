@@ -28,11 +28,20 @@
 }
 body{
   font-family: 'Montserrat', sans-serif;
-
+  
 }
 
 
 table {
   border-collapse: separate;
   border-spacing: 0 15px;
+}
+
+
+.modal-form input[type="date"]::-webkit-datetime-edit {
+  color: white;
+}
+
+.modal-form input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }

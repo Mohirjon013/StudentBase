@@ -18,6 +18,7 @@ elLoginForm.addEventListener("submit", (e) => {
             elLoginBtn.innerHTML = `
             <img class="mx-auto" src="./images/loading.gif" alt="loading" width="54" height="54">
         `
+            localStorage.setItem("login-data", JSON.stringify(data))
             elLoginBtn.classList.remove("py-[13px]")
             setTimeout(() => location.pathname ="../../admin.html",1000)
             e.target.reset()
@@ -25,7 +26,7 @@ elLoginForm.addEventListener("submit", (e) => {
         else{
             alert("You got problem with Login or Password")
             e.target.reset()
-
+            
         }
     }
     else{
@@ -33,6 +34,7 @@ elLoginForm.addEventListener("submit", (e) => {
             elLoginBtn.innerHTML = `
             <img class="mx-auto" src="./images/loading.gif" alt="loading" width="54" height="54">
         `
+            localStorage.setItem("login-data", JSON.stringify(data))
             elLoginBtn.classList.remove("py-[13px]")
             setTimeout(() => location.pathname ="../../admin.html",1000)
             e.target.reset()
